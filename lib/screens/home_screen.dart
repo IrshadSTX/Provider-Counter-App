@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
 import 'package:provider_learning/counter_provider.dart';
+import 'package:provider_learning/screens/second_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -34,6 +35,12 @@ class HomeScreen extends StatelessWidget {
                 value.num.toString(),
                 style: const TextStyle(fontSize: 20),
               ),
+              TextButton(
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => ScreenSecond()));
+                  },
+                  child: const Text('Click Me')),
               Expanded(
                 child: ListView.builder(
                   itemBuilder: (context, index) {
